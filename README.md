@@ -8,12 +8,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ## Configure SSH
 
-download ssh key file under `%USERPROFILE%\.ssh\personal`, then add the following block to `%USERPROFILE%\.ssh\config`
+download ssh key file under `%USERPROFILE%\.ssh`, then add the following block to `%USERPROFILE%\.ssh\config`
 
 ```text
-Host ecormaksin.github.com
+Host <github_username>.github.com
   HostName github.com
-  IdentityFile ~/.ssh/personal/id_ed25519
+  IdentityFile ~/.ssh/<identyty_filename>
   User git
   TCPKeepAlive yes
   IdentitiesOnly yes
@@ -37,14 +37,22 @@ add the following block to `%USERPROFILE%\.gitconfig` (WIP)
 [ghq]
   root = C:/ws/ghq
 
-[ghq "https://github.com/ecormaksin"]
-  root = C:/ws/ghq/ecormaksin
+[ghq "https://github.com/<github_username>"]
+  root = C:/ws/ghq/<github_username>
 
-[url "git@ecormaksin.github.com:ecormaksin"]
-  insteadOf = https://github.com/ecormaksin
+[url "git@<github_username>.github.com:<github_username>"]
+  insteadOf = https://github.com/<github_username>
 
-[includeIf "gitdir:C:/ws/ghq/ecormaksin"]
-  path = C:/ws/ghq/ecormaksin/.gitconfig
+[includeIf "gitdir:C:/ws/ghq/<github_username>"]
+  path = C:/ws/ghq/<github_username>/.gitconfig
+```
+
+add `C:\ws\ghq\<github_username>\.gitconfig`
+
+```text
+[user]
+  email = <mail address>
+  name = <your name>
 ```
 
 ## Create SymbolicLink For ghq-peco script

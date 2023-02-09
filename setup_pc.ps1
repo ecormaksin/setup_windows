@@ -16,6 +16,8 @@ winget install TortoiseSVN.TortoiseSVN
 winget install Git.Git
 winget install TortoiseGit.TortoiseGit
 winget install dbeaver.dbeaver
+winget install WinMerge.WinMerge
+winget install Meld.Meld
 winget install RedHat.Podman
 winget install RedHat.Podman-Desktop
 
