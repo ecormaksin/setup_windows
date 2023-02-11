@@ -34,6 +34,10 @@ Host <github_username>.github.com
 
 Execute `. .\setup_pc.ps1`.
 
+## Change the prompt string of Command Prompt
+
+Execute `. .\set_env_var_for_cmd.ps1`.
+
 ## Create SymbolicLink For Powershell prompt
 
 Execute as admin `. .\create_powershell_prompt_symlink.ps1`.
