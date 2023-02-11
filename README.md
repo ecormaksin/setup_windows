@@ -46,7 +46,7 @@ add the following block to `%USERPROFILE%\.gitconfig`
 
 ```text
 [ghq]
-  root = C:/ws/ghq
+  root = C:/ws/ghq/default
 
 [ghq "https://github.com/<github_username>"]
   root = C:/ws/ghq/<github_username>
