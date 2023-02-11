@@ -1,6 +1,6 @@
 # setup_windows
 
-At first, I need to execute the below command in Windows Powershell.
+At first, you need to execute the below command in Windows Powershell.
 
 ```pwsh
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -8,7 +8,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ## Configure SSH
 
-create `%USERPROFILE%\.ssh\config` as follows:
+Create `%USERPROFILE%\.ssh\config` as follows:
 
 ```text
 Host *
@@ -21,7 +21,7 @@ Host *
 Include */config
 ```
 
-download ssh key file under `%USERPROFILE%\.ssh`, then add the following block to `%USERPROFILE%\.ssh\<github_username>\config`
+Download ssh key file under `%USERPROFILE%\.ssh`, then save the following configuration as `%USERPROFILE%\.ssh\<github_username>\config`
 
 ```text
 Host <github_username>.github.com
@@ -32,17 +32,17 @@ Host <github_username>.github.com
 
 ## Install Apps
 
-execute `. .\setup_pc.ps1`
+Execute `. .\setup_pc.ps1`.
 
 ## Create SymbolicLink For Powershell prompt
 
-execute as admin `. .\create_powershell_prompt_symlink.ps1`
+Execute as admin `. .\create_powershell_prompt_symlink.ps1`.
 
 ## Configure Git config
 
 [reference](https://memo.koumei2.com/ghq-%E3%81%A7-github-%E3%81%AE%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/)
 
-add the following block to `%USERPROFILE%\.gitconfig`
+Add the following block to `%USERPROFILE%\.gitconfig`.
 
 ```text
 [ghq]
@@ -66,11 +66,13 @@ add `C:\ws\ghq\<github_username>\.gitconfig`
   name = <your name>
 ```
 
+When you use `ghq get`, you need to specify repository url as https protocol, not ssh.
+
 ## Create SymbolicLink For ghq-peco script
 
-execute as admin `. .\create_ghq-peco_symlink.ps1`
+Execute as admin `. .\create_ghq-peco_symlink.ps1`.
 
-and paste the following statement on `%USERPROFILE%\scoop\apps\cmder-full\current\config\user_aliases.cmd`
+And paste the following statement on `%USERPROFILE%\scoop\apps\cmder-full\current\config\user_aliases.cmd`
 
 ```cmd
 gp=C:\ws\scripts\ghq-peco.bat
