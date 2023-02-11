@@ -8,15 +8,26 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ## Configure SSH
 
-download ssh key file under `%USERPROFILE%\.ssh`, then add the following block to `%USERPROFILE%\.ssh\config`
+create `%USERPROFILE%\.ssh\config` as follows:
+
+```text
+Host *
+  ServerAliveInterval 60
+  ServerAliveCountMax 5
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+  TCPKeepAlive yes
+
+Include */config
+```
+
+download ssh key file under `%USERPROFILE%\.ssh`, then add the following block to `%USERPROFILE%\.ssh\<github_username>\config`
 
 ```text
 Host <github_username>.github.com
   HostName github.com
   IdentityFile ~/.ssh/<identyty_filename>
   User git
-  TCPKeepAlive yes
-  IdentitiesOnly yes
 ```
 
 ## Install Apps
@@ -31,7 +42,7 @@ execute as admin `. .\create_powershell_prompt_symlink.ps1`
 
 [reference](https://memo.koumei2.com/ghq-%E3%81%A7-github-%E3%81%AE%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/)
 
-add the following block to `%USERPROFILE%\.gitconfig` (WIP)
+add the following block to `%USERPROFILE%\.gitconfig`
 
 ```text
 [ghq]
