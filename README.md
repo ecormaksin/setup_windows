@@ -58,6 +58,9 @@ Add the following block to `%USERPROFILE%\.gitconfig`.
 [url "git@<github_username>.github.com:<github_username>"]
   insteadOf = https://github.com/<github_username>
 
+[url "git@<github_username>.github.com:<github_username>"]
+  insteadOf = git@github.com:<github_username>
+
 [includeIf "gitdir:C:/ws/ghq/<github_username>/"]
   path = C:/ws/ghq/<github_username>/.gitconfig
 ```
