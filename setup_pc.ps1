@@ -6,6 +6,7 @@
 # Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 winget install Microsoft.WindowsTerminal
 winget install Microsoft.PowerShell
+winget install Google.JapaneseIME
 winget install Bitwarden.Bitwarden
 winget install Google.Chrome
 winget install Microsoft.PowerToys
@@ -40,6 +41,11 @@ scoop install openjdk11
 scoop install openjdk17
 scoop install openjdk
 scoop install nvm
+
+scoop bucket add extras
+scoop install qbittorrent-enhanced
+scoop install everything
+scoop install flow-launcher
 
 nvm install lts
 # need to run `nvm use <target_version>`
