@@ -21,6 +21,8 @@ winget install WinMerge.WinMerge
 winget install Meld.Meld
 winget install RedHat.Podman
 winget install RedHat.Podman-Desktop
+winget install CubeSoft.CubePDFUtility
+winget install CubeSoft.CubePDF
 
 winget install Microsoft.VCRedist.2015+.x64
 winget install Oracle.VirtualBox
