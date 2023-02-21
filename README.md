@@ -30,9 +30,19 @@ Host <github_username>.github.com
   User git
 ```
 
+## Install WSL
+
+Execute `wsl --install -d Ubuntu`
+
 ## Install Apps
 
-Execute `. .\setup_pc.ps1`.
+Execute the following commands (maybe as Admin).
+
+```pwsh
+. .\install_via_winget.ps1`
+. .\install_via_scoop.ps1`
+. .\install_via_chocolatey.ps1`
+```
 
 ## Change the prompt string of Command Prompt
 
