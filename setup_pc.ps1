@@ -1,53 +1,66 @@
 ﻿wsl --install -d Ubuntu
 
-# install choclolatey
-# Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
 # Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-winget install Microsoft.WindowsTerminal
-winget install Microsoft.PowerShell
-winget install Google.JapaneseIME
-winget install Bitwarden.Bitwarden
-winget install Google.Chrome
-winget install Microsoft.PowerToys
-winget install SlackTechnologies.Slack
-winget install Notepad++.Notepad++
-winget install Microsoft.VisualStudioCode
-winget install TortoiseSVN.TortoiseSVN
-winget install Git.Git
-winget install TortoiseGit.TortoiseGit
-winget install dbeaver.dbeaver
-winget install WinMerge.WinMerge
-winget install Meld.Meld
-winget install RedHat.Podman
-winget install RedHat.Podman-Desktop
-winget install CubeSoft.CubePDFUtility
-winget install CubeSoft.CubePDF
-
-winget install Microsoft.VCRedist.2015+.x64
-winget install Oracle.VirtualBox
+$AppIds = @(
+    'Microsoft.WindowsTerminal',
+    'Microsoft.PowerShell',
+    'Google.JapaneseIME',
+    'Bitwarden.Bitwarden',
+    'Google.Chrome',
+    'Microsoft.PowerToys',
+    'Microsoft.PCManager.CN',
+    'SlackTechnologies.Slack',
+    'Notepad++.Notepad++',
+    'Microsoft.VisualStudioCode',
+    'TortoiseSVN.TortoiseSVN',
+    'Git.Git',
+    'TortoiseGit.TortoiseGit',
+    'dbeaver.dbeaver',
+    'WinMerge.WinMerge',
+    'Meld.Meld',
+    'RedHat.Podman',
+    'RedHat.Podman-Desktop',
+    'CubeSoft.CubePDFUtility',
+    'CubeSoft.CubePDF',
+    'JGraph.Draw',
+    'Microsoft.VCRedist.2015+.x64',
+    'Oracle.VirtualBox'
+)
+$AppIds | ForEach-Object {
+    & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
+}
 
 # install scoop
 irm get.scoop.sh | iex
 
 scoop install git
 git config --global credential.helper manager
-scoop install gow
-scoop install cmder-full
-scoop install ghq
-scoop install peco
 
-scoop bucket add java
-scoop install openjdk8-redhat
-scoop install openjdk11
-scoop install openjdk17
-scoop install openjdk
-scoop install nvm
+$BucketNames = @(
+    'java',
+    'extras'
+)
+$BucketNames | ForEach-Object {
+    & scoop bucket add $_
+}
 
-scoop bucket add extras
-scoop install qbittorrent-enhanced
-scoop install everything
-scoop install flow-launcher
+$Apps = @(
+    'gow',
+    'cmder-full',
+    'ghq',
+    'peco',
+    'openjdk8-redhat',
+    'openjdk11',
+    'openjdk17',
+    'openjdk',
+    'nvm',
+    'qbittorrent-enhanced',
+    'everything',
+    'flow-launcher'
+)
+$Apps | ForEach-Object {
+    & scoop install $_
+}
 
 nvm install lts
 # need to run `nvm use <target_version>`
