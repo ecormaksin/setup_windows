@@ -13,6 +13,8 @@ $AppIds = @(
     'TortoiseSVN.TortoiseSVN',
     'Git.Git',
     'TortoiseGit.TortoiseGit',
+    'Adobe.Acrobat.Reader.64-bit',
+    'TrackerSoftware.PDF-XChangeViewer',
     'dbeaver.dbeaver',
     'WinMerge.WinMerge',
     'Meld.Meld',
