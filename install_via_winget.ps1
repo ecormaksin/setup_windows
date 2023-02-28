@@ -24,7 +24,8 @@ $AppIds = @(
     'CubeSoft.CubePDF',
     'JGraph.Draw',
     'Microsoft.VCRedist.2015+.x64',
-    'Oracle.VirtualBox'
+    'Oracle.VirtualBox',
+    'JetBrains.Toolbox'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
