@@ -21,6 +21,7 @@ $Apps = @(
     'openjdk11',
     'openjdk17',
     'openjdk',
+    'graphviz',
     'nvm',
     'qbittorrent-enhanced',
     'everything',
