@@ -6,3 +6,17 @@ function ghq-peco {
     $SelectedRepository = $(ghq list -p | peco)
     Set-Location $SelectedRepository
 }
+
+function Install-WingetApp {
+    param (
+        [Parameter(Mandatory)][String]$AppId
+    )
+    &"winget" install --id $AppId --silent --accept-package-agreements --accept-source-agreements
+}
+
+function Upgrade-WingetApp {
+    param (
+        [Parameter(Mandatory)][String]$AppId
+    )
+    &"winget" upgrade --id $AppId --silent --accept-package-agreements --accept-source-agreements
+}
