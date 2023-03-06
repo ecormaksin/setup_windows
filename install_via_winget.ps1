@@ -25,7 +25,8 @@ $AppIds = @(
     'JGraph.Draw',
     'Microsoft.VCRedist.2015+.x64',
     'Oracle.VirtualBox',
-    'JetBrains.Toolbox'
+    'JetBrains.Toolbox',
+    'GIMP.GIMP'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
