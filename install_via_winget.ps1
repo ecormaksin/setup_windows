@@ -26,7 +26,8 @@ $AppIds = @(
     'Microsoft.VCRedist.2015+.x64',
     'Oracle.VirtualBox',
     'JetBrains.Toolbox',
-    'GIMP.GIMP'
+    'GIMP.GIMP',
+    'Xmind.Xmind.8'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
