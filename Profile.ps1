@@ -20,3 +20,11 @@ function Upgrade-WingetApp {
     )
     &"winget" upgrade --id $AppId --silent --accept-package-agreements --accept-source-agreements
 }
+
+function check-svn-status {
+    param (
+        [Parameter(Mandatory)][String]$TargetDirPath
+    )
+    Set-Location -Path $TargetDirPath;
+    &"svn" status
+}
