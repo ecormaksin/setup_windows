@@ -27,7 +27,10 @@ $AppIds = @(
     'Oracle.VirtualBox',
     'JetBrains.Toolbox',
     'GIMP.GIMP',
-    'Xmind.Xmind.8'
+    'Xmind.Xmind.8',
+    'Brave.Brave',
+    'Mozilla.Firefox',
+    'VivaldiTechnologies.Vivaldi'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
