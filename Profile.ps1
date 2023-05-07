@@ -11,14 +11,21 @@ function Install-WingetApp {
     param (
         [Parameter(Mandatory)][String]$AppId
     )
-    &"winget" install --id $AppId --silent --accept-package-agreements --accept-source-agreements
+    &"winget" install --id $AppId --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
 
 function Upgrade-WingetApp {
     param (
         [Parameter(Mandatory)][String]$AppId
     )
-    &"winget" upgrade --id $AppId --silent --accept-package-agreements --accept-source-agreements
+    &"winget" upgrade --id $AppId --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
+}
+
+function Uninstall-WingetApp {
+    param (
+        [Parameter(Mandatory)][String]$AppId
+    )
+    &"winget" uninstall --id $AppId --silent --force --purge --accept-source-agreements --disable-interactivity
 }
 
 function check-svn-status {
