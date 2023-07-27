@@ -24,7 +24,6 @@ $Apps = @(
     'graphviz',
     'nvm',
     'qbittorrent-enhanced',
-    'everything',
     'flow-launcher'
 )
 $Apps | ForEach-Object {

@@ -30,7 +30,10 @@ $AppIds = @(
     'Xmind.Xmind.8',
     'Brave.Brave',
     'Mozilla.Firefox',
-    'VivaldiTechnologies.Vivaldi'
+    'VivaldiTechnologies.Vivaldi',
+    'voidtools.Everything',
+    'stnkl.EverythingToolbar',
+    '7zip.7zip'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
