@@ -1,1 +1,1 @@
-﻿[System.Environment]::SetEnvironmentVariable('PROMPT', '$P ($D $T)$_$G', [System.EnvironmentVariableTarget]::User)
+﻿[System.Environment]::SetEnvironmentVariable('PROMPT', '$P$S$C$D$S$T$F$_$G', [System.EnvironmentVariableTarget]::User)
