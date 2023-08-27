@@ -97,12 +97,47 @@ gp=C:\ws\scripts\ghq-peco.bat
 
 ## Change cmder prompt symbol
 
-- `%USERPROFILE%\scoop\apps\cmder-full\current\vendor\clink.lua`
-  - line 51
-    - `local lambda = "$"`
+### Cmd/Clink
 
-or
+<https://github.com/cmderdev/cmder/wiki/Customization#prompt-symbol>
 
 - `%USERPROFILE%\scoop\apps\cmder-full\current\config\cmder_prompt_config.lua`
   - line 22
     - `prompt_lambSymbol = "$"`
+
+- If we want to change the prompt with variables, we need to configure `%USERPROFILE%\scoop\apps\cmder-full\current\config\cmder_prompt_config.lua` to add code blocks as follows:
+
+  - <https://chrisant996.github.io/clink/clink.html#customizing-the-prompt>
+
+    ```text
+    ---
+
+    cyan_color = "\x1b[36;1m"
+
+    local my_custom_prompt = clink.promptfilter(999)
+    function my_custom_prompt:filter(prompt)
+      local base_prompt = cwd_color..os.getcwd()..clean_color.." ("..os.date("%Y/%m/%d %H:%M:%S")..")"
+      local line = io.popen("git branch --show-current 2>nul"):read("*a")
+      local branch = line:match("(.+)\n")
+      local return_prompt = base_prompt
+      if branch then
+          return_prompt = return_prompt.." "..cyan_color.."["..branch.."]"
+      end
+      return return_prompt..clean_color.."\n> "
+    end
+    ```
+
+### Powershell
+
+<https://github.com/cmderdev/cmder/wiki/Customization#powershell>
+
+- Powerline supported fons(my favorites):
+  - Roboto Mono for Powerline
+  - Inconsolata-g for Powerline
+
+- Oh-My-Posh
+  - Theme(my favorites):
+    - honukai
+    - slimfat
+    - wopian
+    - ys
