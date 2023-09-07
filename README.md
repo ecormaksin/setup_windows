@@ -62,17 +62,20 @@ Add the following block to `%USERPROFILE%\.gitconfig`.
 [ghq]
   root = C:/ws/ghq/default
 
-[ghq "https://github.com/<github_username>"]
-  root = C:/ws/ghq/<github_username>
+[ghq "https://github.com/<user_name>"]
+  root = C:/ws/ghq/<user_name>
 
-[url "git@<github_username>.github.com:<github_username>"]
-  insteadOf = https://github.com/<github_username>
+[ghq "git@github.com:<user_name>"]
+  root = C:/ws/ghq/<user_name>
 
-[url "git@<github_username>.github.com:<github_username>"]
-  insteadOf = git@github.com:<github_username>
+[url "https://github.com/<user_name>"]
+  insteadOf = https.github.<user_name>
 
-[includeIf "gitdir:C:/ws/ghq/<github_username>/"]
-  path = C:/ws/ghq/<github_username>/.gitconfig
+[url "git@github.com:<user_name>"]
+  insteadOf = git.github.<user_name>
+
+[includeIf "gitdir:C:/ws/ghq/<user_name>/"]
+  path = C:/ws/ghq/<user_name>/.gitconfig
 ```
 
 add `C:\ws\ghq\<github_username>\.gitconfig`
@@ -82,8 +85,6 @@ add `C:\ws\ghq\<github_username>\.gitconfig`
   email = <mail address>
   name = <your name>
 ```
-
-When you use `ghq get`, you need to specify repository url as https protocol, not ssh.
 
 ## Create SymbolicLink For ghq-peco script
 
