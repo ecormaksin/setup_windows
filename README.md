@@ -59,27 +59,17 @@ Execute as admin `. .\create_powershell_prompt_symlink.ps1`.
 Add the following block to `%USERPROFILE%\.gitconfig`.
 
 ```text
-[url "ssh://<ssh_config_host_alias>:<user_name>"]
-  insteadOf = https://github.com/<user_name>
-
 [ghq]
   root = C:/ws/ghq/default
-
-[ghq "ssh://<ssh_config_host_alias>"]
-  root = C:/ws/ghq/<user_name>
-
-[ghq "https://<ssh_config_host_alias>"]
-  root = C:/ws/ghq/<user_name>
 
 [ghq "https://github.com/<user_name>"]
   root = C:/ws/ghq/<user_name>
 
-[ghq "git@github.com:<user_name>"]
-  root = C:/ws/ghq/<user_name>
+[url "git@<user_name>.github.com:<user_name>"]
+  insteadOf = https://github.com/<user_name>
 
 [includeIf "gitdir/i:C:/ws/ghq/<user_name>/**"]
   path = C:/ws/ghq/<user_name>/.gitconfig
-
 ```
 
 add `C:\ws\ghq\<user_name>\.gitconfig`
