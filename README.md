@@ -65,8 +65,11 @@ Add the following block to `%USERPROFILE%\.gitconfig`.
 [ghq "https://github.com/<user_name>"]
   root = C:/ws/ghq/<user_name>
 
-[url "git@<user_name>.github.com:<user_name>"]
+[url "git@<ssh_config_host_alias>:<user_name>"]
   insteadOf = https://github.com/<user_name>
+
+[url "git@<ssh_config_host_alias>:<user_name>"]
+  insteadOf = git@github.com:<user_name>
 
 [includeIf "gitdir/i:C:/ws/ghq/<user_name>/**"]
   path = C:/ws/ghq/<user_name>/.gitconfig
