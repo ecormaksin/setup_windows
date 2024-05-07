@@ -11,14 +11,14 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Create `%USERPROFILE%\.ssh\config` as follows:
 
 ```text
+Include */config
+
 Host *
   ServerAliveInterval 60
   ServerAliveCountMax 5
   AddKeysToAgent yes
   IdentitiesOnly yes
   TCPKeepAlive yes
-
-Include */config
 ```
 
 Download ssh key file under `%USERPROFILE%\.ssh`, then save the following configuration as `%USERPROFILE%\.ssh\<github_username>\config`
