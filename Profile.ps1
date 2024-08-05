@@ -35,3 +35,10 @@ function check-svn-status {
     Set-Location -Path $TargetDirPath;
     &"svn" status
 }
+
+function Set-StringForFileName {
+    param (
+        [Parameter(Mandatory)][String]$SourceString
+    )
+    return "${SourceString}" -replace '[ \t!]', '_' | Set-Clipboard -PassThru;
+}
