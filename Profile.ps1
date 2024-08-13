@@ -2,7 +2,7 @@
     "`r`n`r`n$($executionContext.SessionState.Path.CurrentLocation)$(' ')`($(Get-Date -Format 'yyyy/MM/dd HH:mm:ss')`)`r`n$('>' * ($nestedPromptLevel + 1)) ";
 }
 
-function ghq-peco {
+function Set-GHQFolder {
     $SelectedRepository = $(ghq list -p | peco)
     Set-Location $SelectedRepository
 }
@@ -14,7 +14,7 @@ function Install-WingetApp {
     &"winget" install --id $AppId --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
 
-function Upgrade-WingetApp {
+function Update-WingetApp {
     param (
         [Parameter(Mandatory)][String]$AppId
     )
@@ -28,7 +28,7 @@ function Uninstall-WingetApp {
     &"winget" uninstall --id $AppId --silent --force --purge --accept-source-agreements --disable-interactivity
 }
 
-function check-svn-status {
+function Get-SVNStatus {
     param (
         [Parameter(Mandatory)][String]$TargetDirPath
     )
@@ -40,5 +40,10 @@ function Set-StringForFileName {
     param (
         [Parameter(Mandatory)][String]$SourceString
     )
-    return "${SourceString}" -replace '[ \t!]', '_' | Set-Clipboard -PassThru;
+
+    $ReplacedString = "${SourceString}";
+    $ReplacedString = ("${ReplacedString}" -replace '[ \t!]', '_');
+    $ReplacedString = ("${ReplacedString}" -replace "['\?]", '');
+
+    return "${ReplacedString}" | Set-Clipboard -PassThru;
 }
