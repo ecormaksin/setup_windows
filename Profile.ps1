@@ -43,7 +43,7 @@ function Set-StringForFileName {
 
     $ReplacedString = "${SourceString}";
     $ReplacedString = ("${ReplacedString}" -replace '[ \t!]', '_');
-    $ReplacedString = ("${ReplacedString}" -replace "['\?]", '');
+    $ReplacedString = ("${ReplacedString}" -replace "['\?,]", '');
 
     return "${ReplacedString}" | Set-Clipboard -PassThru;
 }
