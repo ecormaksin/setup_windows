@@ -47,3 +47,13 @@ function Set-StringForFileName {
 
     return "${ReplacedString}" | Set-Clipboard -PassThru;
 }
+
+function New-DirectoryRecursively {
+    param (
+        [Parameter(Mandatory)][String]$RootDir,
+        [Parameter(Mandatory)][String]$RelativeDir
+    )
+
+    $ReplacedRelativeDir = ($RelativeDir -replace '[/\\]', '/');
+    New-Item -Path "${RootDir}" -Name ("${ReplacedRelativeDir}" -replace '/', [System.IO.Path]::DirectorySeparatorChar) -ItemType Directory -Force
+}
