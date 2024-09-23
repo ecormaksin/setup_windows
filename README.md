@@ -8,7 +8,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ## Configure SSH
 
-Create `%USERPROFILE%\.ssh\config` as follows:
+Create `%USERPROFILE%\.ssh\config` ( `$env:USERPROFILE\.ssh\config` in the case of PowerShell ) as follows:
 
 ```text
 Include */config
@@ -21,7 +21,7 @@ Host *
   TCPKeepAlive yes
 ```
 
-Download ssh key file under `%USERPROFILE%\.ssh`, then save the following configuration as `%USERPROFILE%\.ssh\<github_username>\config`
+Download ssh key file under `%USERPROFILE%\.ssh`, then save the following configuration as `%USERPROFILE%\.ssh\<github_username>\config` ( `$env:USERPROFILE\.ssh\<github_username>\config` in the case of PowerShell)
 
 ```text
 Host <github_username>.github.com
@@ -36,29 +36,40 @@ Execute `wsl --install -d Ubuntu`
 
 ## Install Apps
 
-Execute the following commands (maybe as Admin).
+Execute the following commands.
+
+- as Admin
 
 ```pwsh
-. .\install_via_winget.ps1`
-. .\install_via_scoop.ps1`
-. .\install_via_chocolatey.ps1`
+.\install_via_winget.ps1
+.\install_via_chocolatey.ps1
+```
+
+- as Normal User
+
+```pwsh
+.\install_via_scoop.ps1
 ```
 
 ## Change the prompt string of Command Prompt
 
-Execute `. .\set_env_var_for_cmd.ps1`.
+Execute `.\set_env_var_for_cmd.ps1`.
 
 ## Create SymbolicLink For Powershell prompt
 
-Execute as admin `. .\create_powershell_prompt_symlink.ps1`.
+Execute as admin `.\create_powershell_prompt_symlink.ps1`.
 
 ## Configure Git config
 
 [reference](https://memo.koumei2.com/ghq-%E3%81%A7-github-%E3%81%AE%E8%A4%87%E6%95%B0%E3%81%AE%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%BD%BF%E3%81%86/)
 
-Add the following block to `%USERPROFILE%\.gitconfig`.
+Add the following block to `%USERPROFILE%\.gitconfig` ( `$env:USERPROFILE\.gitconfig` in the case of PowerShell ).
 
 ```text
+[user]
+  email = <mail address>
+  name = <your name>
+
 [ghq]
   root = C:/ws/ghq/default
 
@@ -85,7 +96,7 @@ add `C:\ws\ghq\<user_name>\.gitconfig`
 
 ## Create SymbolicLink For ghq-peco script
 
-Execute as admin `. .\create_ghq-peco_symlink.ps1`.
+Execute as admin `.\create_ghq-peco_symlink.ps1`.
 
 And paste the following statement on `%USERPROFILE%\scoop\apps\cmder-full\current\config\user_aliases.cmd`
 
@@ -100,6 +111,7 @@ gp=C:\ws\scripts\ghq-peco.bat
 <https://github.com/cmderdev/cmder/wiki/Customization#prompt-symbol>
 
 - `%USERPROFILE%\scoop\apps\cmder-full\current\config\cmder_prompt_config.lua`
+
   - line 22
     - `prompt_lambSymbol = "$"`
 
@@ -125,11 +137,12 @@ gp=C:\ws\scripts\ghq-peco.bat
     end
     ```
 
-### Powershell
+### PowerShell
 
 <https://github.com/cmderdev/cmder/wiki/Customization#powershell>
 
 - Powerline supported fons(my favorites):
+
   - Roboto Mono for Powerline
   - Inconsolata-g for Powerline
 

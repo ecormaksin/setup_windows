@@ -1,39 +1,51 @@
 ﻿# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 $AppIds = @(
-    'Microsoft.WindowsTerminal',
-    'Microsoft.PowerShell',
-    'Google.JapaneseIME',
-    'Bitwarden.Bitwarden',
-    'Google.Chrome',
-    'Microsoft.PowerToys',
-    'Microsoft.PCManager.CN',
-    'SlackTechnologies.Slack',
-    'Notepad++.Notepad++',
-    'Microsoft.VisualStudioCode',
-    'TortoiseSVN.TortoiseSVN',
-    'Git.Git',
-    'TortoiseGit.TortoiseGit',
-    'Adobe.Acrobat.Reader.64-bit',
-    'TrackerSoftware.PDF-XChangeViewer',
-    'dbeaver.dbeaver',
-    'WinMerge.WinMerge',
-    'Meld.Meld',
-    'RedHat.Podman',
-    'RedHat.Podman-Desktop',
-    'CubeSoft.CubePDFUtility',
-    'CubeSoft.CubePDF',
-    'JGraph.Draw',
-    'Microsoft.VCRedist.2015+.x64',
-    'Oracle.VirtualBox',
-    'JetBrains.Toolbox',
-    'GIMP.GIMP',
-    'Xmind.Xmind.8',
-    'Brave.Brave',
-    'Mozilla.Firefox',
-    'VivaldiTechnologies.Vivaldi',
-    'voidtools.Everything',
-    'stnkl.EverythingToolbar',
+    'Microsoft.WindowsTerminal'
+    'Microsoft.PowerShell'
+    # 'Google.JapaneseIME'
+    'Bitwarden.Bitwarden'
+    'Google.Chrome'
+    'Microsoft.PowerToys'
+    'DevToys-app.DevToys'
+    'bmatzelle.Gow'
+    'Microsoft.PCManager.CN'
+    # 'SlackTechnologies.Slack'
+    'Notepad++.Notepad++'
+    'Microsoft.VisualStudioCode'
+    # 'TortoiseSVN.TortoiseSVN'
+    # 'Git.Git'
+    # 'TortoiseGit.TortoiseGit'
+    'Adobe.Acrobat.Reader.64-bit'
+    'TrackerSoftware.PDF-XChangeViewer'
+    # 'dbeaver.dbeaver'
+    'WinMerge.WinMerge'
+    'Meld.Meld'
+    # 'Docker.DockerDesktop'
+    # 'RedHat.Podman'
+    # 'RedHat.Podman-Desktop'
+    'CubeSoft.CubePDFUtility'
+    'CubeSoft.CubePDF'
+    # 'JGraph.Draw'
+    # 'Microsoft.VCRedist.2015+.x64'
+    'Oracle.VirtualBox'
+    'JetBrains.Toolbox'
+    # 'GIMP.GIMP'
+    'Xmind.Xmind.8'
+    'Brave.Brave'
+    'Mozilla.Firefox'
+    'VivaldiTechnologies.Vivaldi'
+    'voidtools.Everything'
+    'stnkl.EverythingToolbar'
+    # 'CoreyButler.NVMforWindows'
+    'Volta.Volta'
+    'Graphviz.Graphviz'
     '7zip.7zip'
+    'EclipseAdoptium.Temurin.8.JDK'
+    'EclipseAdoptium.Temurin.11.JDK'
+    'EclipseAdoptium.Temurin.17.JDK'
+    'EclipseAdoptium.Temurin.21.JDK'
+    'qBittorrent.qBittorrent'
+    'Flow-Launcher.Flow-Launcher'
 )
 $AppIds | ForEach-Object {
     & winget install --id $_ --silent --accept-package-agreements --accept-source-agreements
