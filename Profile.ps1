@@ -57,3 +57,7 @@ function New-DirectoryRecursively {
     $ReplacedRelativeDir = ($RelativeDir -replace '[/\\]', '/');
     New-Item -Path "${RootDir}" -Name ("${ReplacedRelativeDir}" -replace '/', [System.IO.Path]::DirectorySeparatorChar) -ItemType Directory -Force
 }
+
+function sshnc {
+    & ssh -o 'StrictHostKeyChecking no' @args
+}
