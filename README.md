@@ -11,7 +11,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Create `%USERPROFILE%\.ssh\config` ( `$env:USERPROFILE\.ssh\config` in the case of PowerShell ) as follows:
 
 ```text
-Include */config
+Include ./config.d/*
 
 Host *
   ServerAliveInterval 60
