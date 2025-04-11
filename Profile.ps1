@@ -61,3 +61,7 @@ function New-DirectoryRecursively {
 function sshnc {
     & ssh -o 'StrictHostKeyChecking no' @args
 }
+
+function scpnc {
+    & scp -o 'StrictHostKeyChecking no' @args
+}
