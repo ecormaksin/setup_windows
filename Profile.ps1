@@ -21,6 +21,10 @@ function Update-WingetApp {
     &"winget" upgrade $AppId --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
 
+function Update-WingetAppAll {
+    &"winget" upgrade --all --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
+}
+
 function Uninstall-WingetApp {
     param (
         [Parameter(Mandatory)][String]$AppId
