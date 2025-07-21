@@ -78,9 +78,9 @@ Add the following block to `%USERPROFILE%\.gitconfig` ( `$env:USERPROFILE\.gitco
 
 [url "git@<ssh_config_host_alias>:<user_name>"]
   insteadOf = https://github.com/<user_name>
-
-[url "git@<ssh_config_host_alias>:<user_name>"]
   insteadOf = git@github.com:<user_name>
+  pushInsteadOf = https://github.com/<user_name>
+  pushInsteadOf = git@github.com:<user_name>
 
 [includeIf "gitdir/i:C:/ws/ghq/<user_name>/**"]
   path = C:/ws/ghq/<user_name>/.gitconfig
