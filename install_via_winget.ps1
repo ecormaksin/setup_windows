@@ -21,6 +21,8 @@ $AppIds = @(
     'CubeSoft.CubePDF'
     'CubeSoft.CubePDFUtility'
     'DevToys-app.DevToys'
+    'direnv.direnv'
+    'dotenvx.dotenvx'
     'Flow-Launcher.Flow-Launcher'
     'GIMP.GIMP'
     'Git.Git'
