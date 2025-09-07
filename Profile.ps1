@@ -69,3 +69,23 @@ function sshnc {
 function scpnc {
     & scp -o 'StrictHostKeyChecking no' @args
 }
+
+function dcup {
+    & docker compose up -d
+}
+
+function dcdwn {
+    & docker compose down
+}
+
+function dclogs {
+    & docker compose logs @args
+}
+
+function dcps {
+    & docker compose ps @args
+}
+
+function dcexec {
+    & docker compose exec @args
+}
