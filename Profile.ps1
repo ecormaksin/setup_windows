@@ -71,9 +71,16 @@ function scpnc {
 }
 
 function dcup {
-    & docker compose up -d
+    & docker compose up -d @args
 }
 
+function dcstart {
+    & docker compose start @args
+}
+
+function dcstop {
+    & docker compose stop @args
+}
 function dcdwn {
     & docker compose down
 }
