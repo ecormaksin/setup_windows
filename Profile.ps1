@@ -82,7 +82,7 @@ function dcstop {
     & docker compose stop @args
 }
 function dcdwn {
-    & docker compose down
+    & docker compose down @args
 }
 
 function dclogs {
@@ -95,4 +95,8 @@ function dcps {
 
 function dcexec {
     & docker compose exec @args
+}
+
+function gwt {
+    & git worktree @args
 }
