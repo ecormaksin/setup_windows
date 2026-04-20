@@ -59,7 +59,6 @@ Execute the following commands.
 
 ```pwsh
 .\install_via_winget.ps1
-.\install_via_chocolatey.ps1
 ```
 
 - as Normal User
