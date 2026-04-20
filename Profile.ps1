@@ -32,13 +32,13 @@ function Uninstall-WingetApp {
     &"winget" uninstall $AppId --silent --force --purge --accept-source-agreements --disable-interactivity
 }
 
-function Get-SVNStatus {
-    param (
-        [Parameter(Mandatory)][String]$TargetDirPath
-    )
-    Set-Location -Path $TargetDirPath;
-    &"svn" status
-}
+# function Get-SVNStatus {
+#     param (
+#         [Parameter(Mandatory)][String]$TargetDirPath
+#     )
+#     Set-Location -Path $TargetDirPath;
+#     &"svn" status
+# }
 
 function Set-StringForFileName {
     param (
@@ -97,6 +97,14 @@ function dcexec {
     & docker compose exec @args
 }
 
+function dccmp {
+    & docker compose @args
+}
+
 function gwt {
     & git worktree @args
+}
+
+function grbxt {
+    .\gradlew -q build -x test
 }

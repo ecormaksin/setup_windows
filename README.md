@@ -6,6 +6,23 @@ At first, you need to execute the below command in Windows Powershell.
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
+## Unlock File System Path Length
+
+execute as administrator.
+
+```powershell
+Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -Type DWord
+
+(Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem").LongPathsEnabled
+```
+
+## Configure Git
+
+```powershell
+git config --global core.longpaths true
+git config --global core.autocrlf false
+```
+
 ## Configure SSH
 
 Create `%USERPROFILE%\.ssh\config` ( `$env:USERPROFILE\.ssh\config` in the case of PowerShell ) as follows:
