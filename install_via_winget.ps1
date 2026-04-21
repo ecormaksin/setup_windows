@@ -44,6 +44,7 @@ $AppIds = @(
     # 'Mozilla.Firefox'
     'Notepad++.Notepad++'
     'qBittorrent.qBittorrent'
+    'SUSE.RancherDesktop'
     'ShareX.ShareX'
     'sourcegit-scm.SourceGit'
     'stnkl.EverythingToolbar'
