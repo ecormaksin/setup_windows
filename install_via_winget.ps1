@@ -1,7 +1,7 @@
 ﻿# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 $AppIds = @(
     'CoreyButler.NVMforWindows'
-    'dbeaver.dbeaver'
+    'DBeaver.DBeaver.Community'
     # 'Docker.DockerDesktop'
     # 'Oracle.VirtualBox'
     # 'RedHat.Podman'
@@ -11,10 +11,11 @@ $AppIds = @(
     # 'TortoiseSVN.TortoiseSVN'
     '7zip.7zip'
     'Adobe.Acrobat.Reader.64-bit'
+    'BellSoft.LibericaJDK.8.Full'
     'BellSoft.LibericaJDK.11.Full'
     'BellSoft.LibericaJDK.17.Full'
     'BellSoft.LibericaJDK.21.Full'
-    'BellSoft.LibericaJDK.8.Full'
+    'BellSoft.LibericaJDK.25.Full'
     'Bitwarden.Bitwarden'
     'bmatzelle.Gow'
     'Brave.Brave'

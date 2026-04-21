@@ -168,3 +168,16 @@ gp=C:\ws\scripts\ghq-peco.bat
     - slimfat
     - wopian
     - ys
+
+#### Configure Oh-My-Posh
+
+##### Install Font
+
+```powershell
+oh-my-posh font install RobotoMono
+```
+
+##### Configuration
+
+<https://ohmyposh.dev/docs/installation/fonts#configuration>
+
