@@ -29,6 +29,7 @@ $AppIds = @(
     # 'Google.Chrome'
     'Google.JapaneseIME'
     'Graphviz.Graphviz'
+    'JanDeDobbeleer.OhMyPosh'
     'JetBrains.Toolbox'
     'JGraph.Draw'
     'Meld.Meld'
