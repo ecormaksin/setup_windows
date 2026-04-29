@@ -18,6 +18,7 @@ $AppIds = @(
     'BellSoft.LibericaJDK.25.Full'
     'Bitwarden.Bitwarden'
     'bmatzelle.Gow'
+    'BrianApps.Sizer'
     'Brave.Brave'
     'CubeSoft.CubePDF'
     'CubeSoft.CubePDFUtility'
