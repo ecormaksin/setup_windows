@@ -29,6 +29,7 @@ $AppIds = @(
     'GIMP.GIMP'
     'GitVine'
     # 'Google.Chrome'
+    'Google.GoogleDrive'
     'Google.JapaneseIME'
     'Graphviz.Graphviz'
     'JanDeDobbeleer.OhMyPosh'
