@@ -41,7 +41,7 @@ $AppIds = @(
     'Microsoft.PowerToys'
     'Microsoft.VCRedist.2015+.x64'
     # 'Microsoft.VisualStudioCode'
-    'Microsoft.WindowsTerminal'
+    # 'Microsoft.WindowsTerminal'
     'MilosParipovic.OneCommander'
     # 'Mozilla.Firefox'
     'Notepad++.Notepad++'
