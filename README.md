@@ -29,6 +29,7 @@ Create `%USERPROFILE%\.ssh\config` ( `$env:USERPROFILE\.ssh\config` in the case 
 
 ```text
 Include ./config.d/*
+Include ./*/config
 
 Host *
   ServerAliveInterval 60
@@ -87,19 +88,10 @@ Add the following block to `%USERPROFILE%\.gitconfig` ( `$env:USERPROFILE\.gitco
   name = <your name>
 
 [ghq]
-  root = C:/ws/ghq/default
+  root = ~/ws/ghq/default
 
-[ghq "https://github.com/<user_name>"]
-  root = C:/ws/ghq/<user_name>
-
-[url "git@<ssh_config_host_alias>:<user_name>"]
-  insteadOf = https://github.com/<user_name>
-  insteadOf = git@github.com:<user_name>
-  pushInsteadOf = https://github.com/<user_name>
-  pushInsteadOf = git@github.com:<user_name>
-
-[includeIf "gitdir/i:C:/ws/ghq/<user_name>/**"]
-  path = C:/ws/ghq/<user_name>/.gitconfig
+[includeIf "gitdir/i:~/ws/ghq/<user_name>/**"]
+  path = ~/ws/ghq/<user_name>/.gitconfig
 ```
 
 add `C:\ws\ghq\<user_name>\.gitconfig`
@@ -108,6 +100,15 @@ add `C:\ws\ghq\<user_name>\.gitconfig`
 [user]
   email = <mail address>
   name = <your name>
+
+[ghq "https://github.com/<user_name>"]
+  root = ~/ws/ghq/<user_name>
+
+[url "git@<ssh_config_host_alias>:<user_name>"]
+  insteadOf = https://github.com/<user_name>
+  insteadOf = git@github.com:<user_name>
+  pushInsteadOf = https://github.com/<user_name>
+  pushInsteadOf = git@github.com:<user_name>
 ```
 
 ## Create SymbolicLink For ghq-peco script
