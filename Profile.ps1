@@ -108,3 +108,7 @@ function gwt {
 function grbxt {
     .\gradlew -q build -x test
 }
+
+function grcmp {
+    .\gradlew -q compileJava compileTestJava
+}
