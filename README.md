@@ -83,6 +83,13 @@ Execute as admin `.\create_powershell_prompt_symlink.ps1`.
 Add the following block to `%USERPROFILE%\.gitconfig` ( `$env:USERPROFILE\.gitconfig` in the case of PowerShell ).
 
 ```text
+[init]
+	defaultBranch = main
+
+[submodule]
+	recurse = true
+	ignore = dirty
+
 [user]
   email = <mail address>
   name = <your name>
@@ -92,14 +99,6 @@ Add the following block to `%USERPROFILE%\.gitconfig` ( `$env:USERPROFILE\.gitco
 
 [includeIf "gitdir/i:~/ws/ghq/<user_name>/**"]
   path = ~/ws/ghq/<user_name>/.gitconfig
-```
-
-add `C:\ws\ghq\<user_name>\.gitconfig`
-
-```text
-[user]
-  email = <mail address>
-  name = <your name>
 
 [ghq "https://github.com/<user_name>"]
   root = ~/ws/ghq/<user_name>
@@ -109,6 +108,14 @@ add `C:\ws\ghq\<user_name>\.gitconfig`
   insteadOf = git@github.com:<user_name>
   pushInsteadOf = https://github.com/<user_name>
   pushInsteadOf = git@github.com:<user_name>
+```
+
+add `C:\ws\ghq\<user_name>\.gitconfig`
+
+```text
+[user]
+  email = <mail address>
+  name = <your name>
 ```
 
 ## Create SymbolicLink For ghq-peco script
