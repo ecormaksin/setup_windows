@@ -43,7 +43,7 @@ $AppIds = @(
     'Microsoft.VisualStudioCode'
     'Microsoft.WindowsTerminal'
     'MilosParipovic.OneCommander'
-    'Mozilla.Firefox'
+    'Mozilla.Firefox.ja'
     'Notepad++.Notepad++'
     'qBittorrent.qBittorrent'
     'SUSE.RancherDesktop'
