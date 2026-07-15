@@ -21,15 +21,53 @@ function Update-WingetApp {
     &"winget" upgrade $AppId --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
 }
 
-function Update-WingetAppAll {
-    &"winget" upgrade --all --silent --accept-package-agreements --accept-source-agreements --force --disable-interactivity
-}
-
 function Uninstall-WingetApp {
     param (
         [Parameter(Mandatory)][String]$AppId
     )
     &"winget" uninstall $AppId --silent --force --purge --accept-source-agreements --disable-interactivity
+}
+
+function Split-StringToLines {
+    param (
+        [Parameter(Mandatory)][String]$SourceString
+    )
+    return , ("${SourceString}" -split '\r?\n');
+}
+
+# 使用例:
+#   # アップグレード候補を取得
+#   $Ids = Get-UpgradableWingetAppIds
+#
+#   # 上げたくないアプリを除外(例: Git は据え置き)
+#   $Ids = $Ids | Where-Object { $_ -ne 'Git.Git' }
+#
+#   # 除外後のリストで一括更新
+#   Update-AllWingetApps -Ids $Ids
+function Update-AllWingetApps {
+    param (
+        [Parameter(Mandatory)][String[]]$Ids
+    )
+    $Ids | ForEach-Object { Update-WingetApp $_ }
+}
+
+function Get-UpgradableWingetAppIds {
+    $AppIds = @();
+    foreach ($Line in (&"winget" upgrade)) {
+        if ("${Line}" -notmatch '(winget|msstore)\s*$') {
+            continue;
+        }
+        $VersionMatches = [regex]::Matches("${Line}", '[0-9]+(\.[0-9]+)+');
+        if ($VersionMatches.Count -lt 2) {
+            continue;
+        }
+        $SecondVersionFromRight = $VersionMatches[$VersionMatches.Count - 2];
+        $LeftOfVersion = "${Line}".Substring(0, $SecondVersionFromRight.Index);
+        if ("${LeftOfVersion}" -match '\s+(\S+)\s+$') {
+            $AppIds += $matches[1];
+        }
+    }
+    return , $AppIds;
 }
 
 # function Get-SVNStatus {
