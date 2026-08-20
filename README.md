@@ -32,11 +32,15 @@ Include ./config.d/*
 Include ./*/config
 
 Host *
-  ServerAliveInterval 60
-  ServerAliveCountMax 5
+  ServerAliveInterval 10
+  ServerAliveCountMax 3
   AddKeysToAgent yes
   IdentitiesOnly yes
   TCPKeepAlive yes
+  ControlMaster no
+  ControlPath none
+  ControlPersist no
+  IPQoS throughput
 ```
 
 Download ssh key file under `%USERPROFILE%\.ssh`, then save the following configuration as `%USERPROFILE%\.ssh\<github_username>\config` ( `$env:USERPROFILE\.ssh\<github_username>\config` in the case of PowerShell)
