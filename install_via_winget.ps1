@@ -54,7 +54,7 @@ $AppIds = @(
     'Vivaldi.Vivaldi'
     # 'voidtools.Everything'
     # 'Volta.Volta'
-    # 'WinMerge.WinMerge'
+    'WinMerge.WinMerge'
     # 'Xmind.Xmind.8'
 )
 $AppIds | ForEach-Object {
