@@ -129,7 +129,7 @@ Execute as admin `.\create_ghq-peco_symlink.ps1`.
 And paste the following statement on `%USERPROFILE%\scoop\apps\cmder-full\current\config\user_aliases.cmd`
 
 ```cmd
-gp=C:\ws\scripts\ghq-peco.bat
+gp=%USERPROFILE%\ws\scripts\ghq-peco.bat
 ```
 
 ## Change cmder prompt symbol
@@ -192,4 +192,3 @@ oh-my-posh font install RobotoMono
 ##### Configuration
 
 <https://ohmyposh.dev/docs/installation/fonts#configuration>
-
